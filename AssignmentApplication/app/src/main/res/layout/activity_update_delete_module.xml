@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateDeleteModuleActivity"
+    android:background="@drawable/background">
+
+    <EditText
+        android:id="@+id/editModuleID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginBottom="543dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:hint="Module ID"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="141dp" />
+
+    <EditText
+        android:id="@+id/editModuleName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-3dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_marginBottom="474dp"
+        android:hint="Module Name"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="194dp" />
+
+    <Button
+        android:id="@+id/btnUpdateModule"
+        android:layout_width="156dp"
+        android:layout_height="49dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="387dp"
+        android:text="Update Module"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="302dp"
+        android:backgroundTint="#E91E63"/>
+
+    <Button
+        android:id="@+id/btnDeleteModule"
+        android:layout_width="152dp"
+        android:layout_height="49dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="255dp"
+        android:layout_marginBottom="387dp"
+        android:text="Delete Module"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="302dp"
+        android:backgroundTint="#E91E63"/>
+
+    <Button
+        android:id="@+id/btnViewModule"
+        android:layout_width="156dp"
+        android:layout_height="49dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="290dp"
+        android:text="View Modules"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="302dp"
+        android:backgroundTint="#E91E63"/>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="41dp"
+        android:backgroundTint="#E91E63"
+        android:text="Back"
+        tools:ignore="MissingConstraints" />
+
+
+</RelativeLayout>

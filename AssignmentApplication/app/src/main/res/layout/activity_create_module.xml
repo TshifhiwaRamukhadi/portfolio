@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateModule"
+    android:background="@drawable/admin">
+
+    <EditText
+        android:id="@+id/editModuleName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="548dp"
+        android:hint="Module Name"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="165dp" />
+
+    <EditText
+        android:id="@+id/editModuleCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="3dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_marginBottom="393dp"
+        android:hint="Module Code" />
+
+    <EditText
+        android:id="@+id/editModuleDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="479dp"
+        android:hint="Module Duration"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="234dp" />
+
+    <Button
+        android:id="@+id/btnSaveModule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="298dp"
+        android:text="Save Module"
+        android:backgroundTint="#E91E63"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="303dp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="41dp"
+        android:backgroundTint="#E91E63"
+        android:text="Back"
+        tools:ignore="MissingConstraints" />
+
+</RelativeLayout>

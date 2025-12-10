@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminDashboard"
+    android:background="@drawable/admin"> >
+
+    <LinearLayout
+        android:id="@+id/linearLayoutAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        tools:ignore="MissingConstraints">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnManageStudents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-5dp"
+        android:layout_marginBottom="183dp"
+        android:text="Manage Students"
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="#E91E63"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="524dp" />
+
+    <Button
+        android:id="@+id/btnManageModules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-5dp"
+        android:layout_marginBottom="251dp"
+        android:text="Manage Modules"
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="#E91E63"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="463dp" />
+
+    <Button
+        android:id="@+id/btnCreateModule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="318dp"
+        android:text="Create Module"
+        android:backgroundTint="#E91E63"
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="399dp" />
+
+    <Button
+        android:id="@+id/btnCreateInstructor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginBottom="392dp"
+        android:text="Create Instructor"
+        android:backgroundTint="#E91E63"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="324dp" />
+
+    <Button
+        android:id="@+id/btnCreateStudent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-11dp"
+        android:layout_marginBottom="468dp"
+        android:backgroundTint="#E91E63"
+        android:text="Create Student"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="241dp" />
+
+    <TextView
+        android:id="@+id/tvAdminTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="571dp"
+        android:textColor="@color/white"
+        android:text="Admin Dashboard"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="41dp"
+        android:backgroundTint="#E91E63"
+        android:text="Back"
+        tools:ignore="MissingConstraints" />
+
+
+</RelativeLayout>

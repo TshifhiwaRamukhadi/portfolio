@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateInstructor"
+    android:background="@drawable/admin">
+
+    <EditText
+        android:id="@+id/editInstructorTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-8dp"
+        android:layout_marginBottom="559dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:hint="Title (e.g. Dr, Mr)"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editInstructorFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-10dp"
+        android:layout_marginBottom="507dp"
+        android:hint="First Name"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editInstructorLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_marginBottom="466dp"
+        android:hint="Last Name"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnSaveInstructor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="2dp"
+        android:backgroundTint="#E91E63"
+        android:layout_marginBottom="381dp"
+        android:text="Save Instructor"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="41dp"
+        android:backgroundTint="#E91E63"
+        android:text="Back"
+        tools:ignore="MissingConstraints" />
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentDashboard"
+    android:background="@drawable/background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="514dp"
+        android:text="Student Portal"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnViewMyTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="396dp"
+        android:text="View My Tasks"
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="#E91E63"/>
+
+    <Button
+        android:id="@+id/btnLogoutStudent"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="308dp"
+        android:backgroundTint="#E91E63"
+        android:text="Logout"
+        tools:ignore="MissingConstraints" />
+
+</RelativeLayout>

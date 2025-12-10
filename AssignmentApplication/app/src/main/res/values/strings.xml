@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AssignmentApplication</string>
+    <string name="module_name">Module Name</string>
+    <string name="save_task">Save Task</string>
+    <string name="due_date">Due Date</string>
+    <string name="task_name">Task Name</string>
+</resources>
