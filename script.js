@@ -61,9 +61,19 @@ window.addEventListener('scroll', highlightNavigation);
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
         navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.15)';
     } else {
+        navbar.classList.remove('scrolled');
         navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    }
+    
+    // Scroll progress indicator
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    if (scrollIndicator) {
+        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        scrollIndicator.style.width = scrolled + '%';
     }
 });
 
@@ -151,4 +161,184 @@ if (profileImg) {
 if (profileImg && profileImg.complete && profileImg.naturalHeight === 0) {
     profileImg.dispatchEvent(new Event('error'));
 }
+
+// Typing animation for hero title
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.textContent = '';
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+// Animate hero text on load
+document.addEventListener('DOMContentLoaded', () => {
+    const heroName = document.querySelector('.hero-title .name');
+    if (heroName) {
+        const originalText = heroName.textContent;
+        heroName.style.opacity = '0';
+        setTimeout(() => {
+            heroName.style.opacity = '1';
+            heroName.style.transition = 'opacity 0.5s ease';
+        }, 500);
+    }
+});
+
+// Floating animation for profile image
+const profileWrapper = document.querySelector('.image-wrapper');
+if (profileWrapper) {
+    setInterval(() => {
+        profileWrapper.style.animation = 'none';
+        setTimeout(() => {
+            profileWrapper.style.animation = 'float 3s ease-in-out infinite';
+        }, 10);
+    }, 3000);
+}
+
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+    }
+});
+
+// Counter animation for stats (if you add stats later)
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start);
+        }
+    }, 16);
+}
+
+// Enhanced scroll animations with stagger
+const observerOptionsEnhanced = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observerEnhanced = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+                entry.target.classList.add('animated');
+            }, index * 100);
+        }
+    });
+}, observerOptionsEnhanced);
+
+// Observe all animatable elements
+document.addEventListener('DOMContentLoaded', () => {
+    const allAnimateElements = document.querySelectorAll(`
+        .skill-category, 
+        .project-card, 
+        .education-item, 
+        .experience-section,
+        .about-text,
+        .contact-item,
+        .detail-item
+    `);
+    
+    allAnimateElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px) scale(0.95)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observerEnhanced.observe(el);
+    });
+});
+
+// Skill tags hover animation
+document.querySelectorAll('.skill-tag').forEach(tag => {
+    tag.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.1)';
+    });
+    tag.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Project cards tilt effect
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+    });
+});
+
+// Smooth reveal animation for sections
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('section-visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('section').forEach(section => {
+    sectionObserver.observe(section);
+});
+
+// Loading animation
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    }
+});
+
+// Cursor trail effect (optional, can be disabled for performance)
+let mouseX = 0, mouseY = 0;
+let cursorTrail = [];
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Create subtle cursor trail
+    if (Math.random() > 0.7) {
+        const trail = document.createElement('div');
+        trail.className = 'cursor-trail';
+        trail.style.left = mouseX + 'px';
+        trail.style.top = mouseY + 'px';
+        document.body.appendChild(trail);
+        
+        setTimeout(() => {
+            trail.style.opacity = '0';
+            trail.style.transform = 'scale(0)';
+            setTimeout(() => trail.remove(), 300);
+        }, 100);
+    }
+});
 
