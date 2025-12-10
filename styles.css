@@ -6,15 +6,15 @@
 }
 
 :root {
-    --primary-color: #1E90FF;
-    --secondary-color: #0066CC;
-    --accent-color: #FF6B6B;
+    --primary-color: #E91E63;
+    --secondary-color: #C2185B;
+    --accent-color: #F48FB1;
     --text-dark: #2C3E50;
     --text-light: #7F8C8D;
-    --bg-light: #F8F9FA;
+    --bg-light: #FCE4EC;
     --bg-white: #FFFFFF;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 5px 20px rgba(0, 0, 0, 0.15);
+    --shadow: 0 2px 10px rgba(233, 30, 99, 0.1);
+    --shadow-lg: 0 5px 20px rgba(233, 30, 99, 0.15);
     --transition: all 0.3s ease;
 }
 
@@ -126,7 +126,7 @@ body.loaded {
     display: flex;
     align-items: center;
     padding-top: 80px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
     background-image: url('assets/profile.jpg');
     background-size: cover;
     background-position: center;
@@ -144,7 +144,7 @@ body.loaded {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%);
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.85) 0%, rgba(194, 24, 91, 0.85) 100%);
     z-index: 0;
 }
 
@@ -304,7 +304,7 @@ body.loaded {
     right: -5px;
     bottom: -5px;
     border-radius: 50%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    background: linear-gradient(45deg, rgba(244, 143, 177, 0.3), rgba(233, 30, 99, 0.1));
     z-index: -1;
 }
 
@@ -334,6 +334,31 @@ body.loaded {
 #profile-img[src=""]::after {
     content: 'TR';
     font-weight: bold;
+}
+
+/* Pink theme adjustments */
+.skill-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
+.project-card::before {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.education-icon {
+    background: var(--primary-color);
+}
+
+.project-icon {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.experience-note {
+    background: #FCE4EC;
+    border-left: 4px solid var(--primary-color);
 }
 
 /* Section Styles */
@@ -602,6 +627,74 @@ section {
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+}
+
+.project-card.featured-project {
+    border: 2px solid var(--primary-color);
+    background: linear-gradient(135deg, #fff 0%, #FCE4EC 100%);
+}
+
+.project-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.project-details {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(244, 143, 177, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.project-details h4 {
+    color: var(--primary-color);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.project-details h4:first-child {
+    margin-top: 0;
+}
+
+.project-details ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5rem 0;
+}
+
+.project-details li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.project-details li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.project-details p {
+    margin: 0.5rem 0;
+    color: var(--text-light);
+    line-height: 1.8;
 }
 
 .project-card::before {
@@ -1063,7 +1156,7 @@ section.section-visible {
 
 /* Gradient text animation */
 .hero-title .name {
-    background: linear-gradient(45deg, #fff, #e0e0e0, #fff);
+    background: linear-gradient(45deg, #fff, #FCE4EC, #fff);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
