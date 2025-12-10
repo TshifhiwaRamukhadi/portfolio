@@ -316,7 +316,7 @@ body.loaded {
 }
 
 .image-wrapper:hover #profile-img {
-    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 /* If image doesn't load, show placeholder */
@@ -340,7 +340,7 @@ body.loaded {
 .skill-tag:hover {
     background: var(--primary-color);
     color: white;
-    transform: translateY(-5px) scale(1.1);
+    transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
 }
 
@@ -1010,22 +1010,18 @@ section {
 @keyframes fadeInLeft {
     from {
         opacity: 0;
-        transform: translateX(-50px);
     }
     to {
         opacity: 1;
-        transform: translateX(0);
     }
 }
 
 @keyframes fadeInRight {
     from {
         opacity: 0;
-        transform: translateX(50px);
     }
     to {
         opacity: 1;
-        transform: translateX(0);
     }
 }
 
@@ -1040,17 +1036,17 @@ section {
 
 @keyframes pulse {
     0%, 100% {
-        transform: scale(1);
+        opacity: 1;
     }
     50% {
-        transform: scale(1.05);
+        opacity: 0.8;
     }
 }
 
 @keyframes slideInUp {
     from {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -1093,21 +1089,19 @@ section {
     animation: float 3s ease-in-out infinite;
 }
 
-/* Pulse animation for buttons */
+/* Button hover effect */
 .btn:hover {
-    animation: pulse 0.6s ease-in-out;
+    opacity: 0.9;
 }
 
 /* Section reveal animation */
 section {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.8s ease;
 }
 
 section.section-visible {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* Animated elements */
@@ -1174,10 +1168,9 @@ section.section-visible {
     box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
 }
 
-/* Project card 3D effect */
+/* Project card hover effect */
 .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform-style: preserve-3d;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 /* Social links animation */

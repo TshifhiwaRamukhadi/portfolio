@@ -235,7 +235,7 @@ const observerEnhanced = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             setTimeout(() => {
                 entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0) scale(1)';
+                entry.target.style.transform = 'translateY(0)';
                 entry.target.classList.add('animated');
             }, index * 100);
         }
@@ -256,40 +256,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     allAnimateElements.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px) scale(0.95)';
+        el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         observerEnhanced.observe(el);
     });
 });
 
-// Skill tags hover animation
+// Skill tags hover animation (simple lift only)
 document.querySelectorAll('.skill-tag').forEach(tag => {
     tag.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px) scale(1.1)';
+        this.style.transform = 'translateY(-3px)';
     });
     tag.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-// Project cards tilt effect
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        
-        this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        this.style.transform = 'translateY(0)';
     });
 });
 
@@ -336,7 +315,6 @@ document.addEventListener('mousemove', (e) => {
         
         setTimeout(() => {
             trail.style.opacity = '0';
-            trail.style.transform = 'scale(0)';
             setTimeout(() => trail.remove(), 300);
         }, 100);
     }
