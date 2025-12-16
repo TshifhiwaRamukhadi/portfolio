@@ -28,6 +28,7 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-white);
     overflow-x: hidden;
+    opacity: 1 !important; /* Ensure body is always visible */
 }
 
 body.loaded {
@@ -383,6 +384,8 @@ body.loaded {
 /* Section Styles */
 section {
     padding: 80px 0;
+    opacity: 1 !important; /* Ensure all sections are visible */
+    display: block !important; /* Ensure all sections are displayed */
 }
 
 .section-title {
