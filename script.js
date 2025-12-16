@@ -254,12 +254,26 @@ document.addEventListener('DOMContentLoaded', () => {
         .detail-item
     `);
     
-    allAnimateElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        observerEnhanced.observe(el);
-    });
+    // Only animate if IntersectionObserver is supported
+    if (window.IntersectionObserver) {
+        allAnimateElements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observerEnhanced.observe(el);
+        });
+        
+        // Fallback: Make elements visible after 2 seconds if observer doesn't trigger
+        setTimeout(() => {
+            allAnimateElements.forEach((el) => {
+                if (el.style.opacity === '0' || window.getComputedStyle(el).opacity === '0') {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        }, 2000);
+    }
+    // If IntersectionObserver is not supported, elements remain visible (CSS default)
 });
 
 // Skill tags hover animation (simple lift only)

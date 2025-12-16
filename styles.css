@@ -648,6 +648,12 @@ section {
     overflow: hidden;
 }
 
+/* Ensure projects are visible by default - JS will animate if available */
+.projects-grid .project-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .project-card.featured-project {
     border: 2px solid var(--primary-color);
     background: linear-gradient(135deg, #fff 0%, #FCE4EC 100%);
