@@ -1169,15 +1169,15 @@ section {
     opacity: 0.9;
 }
 
-/* Section reveal animation */
-section {
+/* Section reveal animation - DISABLED to ensure visibility */
+/* section {
     opacity: 0;
     transition: opacity 0.8s ease;
 }
 
 section.section-visible {
     opacity: 1;
-}
+} */
 
 /* Animated elements */
 .animated {
