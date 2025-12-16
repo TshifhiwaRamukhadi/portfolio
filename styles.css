@@ -737,9 +737,24 @@ section {
 .project-video {
     width: 100%;
     height: auto;
+    min-height: 300px;
     border-radius: 8px;
     display: block;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    background: #000;
+}
+
+.project-video:not([src]) {
+    background: linear-gradient(135deg, var(--bg-light) 0%, rgba(244, 143, 177, 0.3) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.project-video:not([src])::before {
+    content: 'Click to load video';
 }
 
 .project-card::before {

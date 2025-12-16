@@ -297,6 +297,37 @@ window.addEventListener('load', () => {
     }
 });
 
+// Video error handling and lazy loading
+document.addEventListener('DOMContentLoaded', () => {
+    const projectVideo = document.querySelector('.project-video');
+    if (projectVideo) {
+        // Handle video loading errors
+        projectVideo.addEventListener('error', function(e) {
+            console.error('Video loading error:', e);
+            const wrapper = this.closest('.project-video-wrapper');
+            if (wrapper) {
+                const errorMsg = document.createElement('p');
+                errorMsg.style.cssText = 'color: var(--primary-color); text-align: center; padding: 1rem;';
+                errorMsg.textContent = 'Video failed to load. Please try refreshing the page or check your internet connection.';
+                wrapper.appendChild(errorMsg);
+            }
+        });
+
+        // Only load video when it's about to be viewed (intersection observer)
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Video is in view, but don't preload yet - let user click play
+                    entry.target.setAttribute('preload', 'metadata');
+                    videoObserver.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '50px' });
+
+        videoObserver.observe(projectVideo);
+    }
+});
+
 // Cursor trail effect (optional, can be disabled for performance)
 let mouseX = 0, mouseY = 0;
 let cursorTrail = [];
