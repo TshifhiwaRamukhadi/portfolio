@@ -277,17 +277,26 @@ document.querySelectorAll('.skill-tag').forEach(tag => {
     });
 });
 
-// Smooth reveal animation for sections
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('section-visible');
-        }
-    });
-}, { threshold: 0.2 });
+// Smooth reveal animation for sections - DISABLED to ensure visibility
+// const sectionObserver = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('section-visible');
+//         }
+//     });
+// }, { threshold: 0.2 });
 
-document.querySelectorAll('section').forEach(section => {
-    sectionObserver.observe(section);
+// document.querySelectorAll('section').forEach(section => {
+//     sectionObserver.observe(section);
+// });
+
+// Ensure all sections are visible immediately
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '1';
+        section.style.display = 'block';
+        section.classList.add('section-visible');
+    });
 });
 
 // Loading animation
