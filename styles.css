@@ -648,10 +648,16 @@ section {
     overflow: hidden;
 }
 
-/* Ensure projects are visible by default - JS will animate if available */
-.projects-grid .project-card {
-    opacity: 1;
-    transform: translateY(0);
+/* Ensure ALL content is visible by default - JS will animate if available */
+.projects-grid .project-card,
+.skill-category,
+.education-item,
+.experience-section,
+.about-text,
+.contact-item,
+.detail-item {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 .project-card.featured-project {

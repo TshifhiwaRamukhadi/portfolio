@@ -118,15 +118,17 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe elements for animation - DISABLED to ensure content is always visible
+// Animation can be re-enabled later if needed, but for now we prioritize visibility
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.skill-category, .project-card, .education-item, .experience-section');
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+    // Keep elements visible - animation disabled to prevent visibility issues
+    // const animateElements = document.querySelectorAll('.skill-category, .project-card, .education-item, .experience-section');
+    // animateElements.forEach(el => {
+    //     el.style.opacity = '0';
+    //     el.style.transform = 'translateY(20px)';
+    //     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    //     observer.observe(el);
+    // });
 });
 
 // Profile image error handler
@@ -242,8 +244,9 @@ const observerEnhanced = new IntersectionObserver((entries) => {
     });
 }, observerOptionsEnhanced);
 
-// Observe all animatable elements
+// Observe all animatable elements - DISABLED to ensure content is always visible
 document.addEventListener('DOMContentLoaded', () => {
+    // Ensure all elements are visible immediately
     const allAnimateElements = document.querySelectorAll(`
         .skill-category, 
         .project-card, 
@@ -254,26 +257,14 @@ document.addEventListener('DOMContentLoaded', () => {
         .detail-item
     `);
     
-    // Only animate if IntersectionObserver is supported
-    if (window.IntersectionObserver) {
-        allAnimateElements.forEach((el, index) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observerEnhanced.observe(el);
-        });
-        
-        // Fallback: Make elements visible after 2 seconds if observer doesn't trigger
-        setTimeout(() => {
-            allAnimateElements.forEach((el) => {
-                if (el.style.opacity === '0' || window.getComputedStyle(el).opacity === '0') {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                }
-            });
-        }, 2000);
-    }
-    // If IntersectionObserver is not supported, elements remain visible (CSS default)
+    // Force visibility - no animation to prevent hiding issues
+    allAnimateElements.forEach((el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+    });
+    
+    // Animation disabled to prevent content from being hidden
+    // Can be re-enabled later with proper fallbacks
 });
 
 // Skill tags hover animation (simple lift only)
